@@ -1,0 +1,118 @@
+html, body{
+    height: 100%;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.Main {
+    height:100%;
+    width: 100%;
+}
+
+.FormContainer{
+    width: 49%;
+    margin:0px;
+    vertical-align: middle;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+}
+.ImageContainer{
+    vertical-align: middle;
+    width: 50%;
+    float:right;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+    background-image: url("../image/login/cvsu-bg.png");
+    background-repeat: no-repeat;
+}
+#cvsu-logo{
+    width: 80px;
+    margin: 30px;
+    margin-left: 25px;
+}
+.Forms{
+    margin: 0px auto;
+    align-items: center;
+    padding: 20px;
+}
+    h1,h6{
+        color: #3A5938;
+        margin: 10px 0px 10px 0px;
+    }
+    h6{
+        margin-bottom: 20px;
+    }
+    h1{
+        font-weight: bolder;
+        font-size: 30px;
+    }
+    h6{
+        line-height: 15px;
+        font-size: 12px;
+        font-weight: bolder;
+    }
+    input{
+    display: block;
+    margin: 30px 0px 10px 0px;
+    border-radius: 7px;
+    border: 1px solid #C2C2C2;
+    height: 30px;
+    width: 270px;
+    font-weight: lighter;
+    font-size: 10px;
+    padding: 4px;
+    color: #2b2828;
+    } 
+    input:focus{
+        outline: none;
+        border: 1px solid #3A5938;
+    }    
+    a{
+        font-size: 10px;
+        color: #3A5938;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 10px 0px 10px 2px;
+    }
+    p{
+        font-size: 10px;
+        margin: 20px 0px 20px 40px;
+    }
+    span{
+        margin: 20px 0px 10px 30px;
+        font-weight: bolder;
+        font-size: 10px;
+        color: white;
+        padding: 12px 75px 12px 75px;
+        border-radius: 5px;
+        background-color: rgba(255, 0, 0, 0.67);
+    }
+    button{
+        display: block;
+        padding: 6px;
+        width: 270px;
+        margin: 40px 0px 10px 0px;
+        background-color: #4f744c;
+        border: none;
+        color: #ffffff;
+        font-weight: bolder;
+        border-radius: 10px;
+    }
+    button:hover{
+        background-color: #3A5938;
+        cursor: pointer;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+    }
+.credits{
+    font-weight: 700;
+    color: #3A5938;
+    margin-top: 10%;
+}

@@ -1,0 +1,125 @@
+{% extends 'SideBar.html' %}
+{% load static %}
+{% load tz %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/reports/reports_feedbacks.css' %}">
+{% endblock%}
+
+{% block title %}
+Reports
+{% endblock %}
+
+{% block content %}
+    <div class='reportlist_page'>
+        <h1>REPORT LIST</h1>
+        <div class='Search_bar'>
+            <form action="{% url 'feedback:reports_feedbacks_search' office.id %}" method="GET" id="search-form">
+                <input type="text" placeholder="Search Client" name="search" id="search-input" />
+                <select name="category" id="search-category" class="filter">
+                    <option value="">Polarity</option>
+                    <option value="positive">Positive</option>
+                    <option value="neutral">Neutral</option>
+                    <option value="negative">Negative</option>
+                </select>
+                <label>From:</label>
+                <input type="date" name="date_from" id="date-from" placeholder="Date From" class="filter"/>
+                <label>To:</label>
+                <input type="date" name="date_to" id="date-to" placeholder="Date To" class="filter"/>
+            </form>
+        </div>
+        <div class="client_tbl">
+            <table id="search-results">
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Average</th>
+                    <th>Sentiment Analysis</th>
+                    <th>Feedback </th>
+                </tr>
+                {% for client in clients %}
+                <tr key={key}>
+                    <td>{{client.client_name}}</td>
+                    <td>{{client.client_visit_date|timezone:"Asia/Manila"|date:"F j, Y g:i A" }}</td>
+                    <td>{{client.rating}}</td>
+                    {% if client.sentiment == "positive" %}
+                        <td>
+                            <span class="sentiment-value">{{ client.sentiment }}</span>
+                        </td>
+                    {% elif client.sentiment == "neutral" %}
+                        <td>
+                            <span class="sentiment-value">{{ client.sentiment }}</span>
+                        </td>
+                    {% else %}
+                        <td>
+                            <span class="sentiment-value">{{ client.sentiment }}</span>
+                        </td>
+                    {% endif %}
+                    <td class="vw"><a href="{% url 'feedback:reports_single' office.id client.id %}">view</a></td>
+                 </tr>
+                 {% endfor %}
+            </table>
+            <div class="pagebutton">
+                <ul class="pagination">
+                    {% if clients.has_previous %}
+                        <li class="page-item"><a href="?page=1" class="page-link">&laquo; First </a></li>
+                        <li class="page-item"><a href="?page={{ clients.previous_page_number }}" class="page-link"> Previous </a></li>
+                    {% endif %}
+        
+                    {% if clients.has_next %}
+                        <li class="page-item"><a href="?page={{ clients.next_page_number }}" class="page-link"> Next </a></li>
+                        <li class="page-item"><a href="?page={{ clients.paginator.num_pages }}" class="page-link">&raquo; Last </a></li>
+                    {% endif %}
+                </ul>  
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+$(document).ready(function() {
+    var searchTimeout;
+
+    $('#search-input, #search-category').on('input', function() {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(getSearchResults, 300); // Delay the search by 300 milliseconds
+    });
+
+    $('#date-from, #date-to').on('change', function() {
+        getSearchResults();
+    });
+
+    function getSearchResults() {
+        var searchValue = $('#search-input').val();
+        var categoryValue = $('#search-category').val();
+        var dateFromValue = $('#date-from').val();
+        var dateToValue = $('#date-to').val();
+
+        // Adding one day to the date_to value
+        if (dateToValue) {
+            var dateTo = new Date(dateToValue);
+            dateTo.setDate(dateTo.getDate() + 1);
+            dateToValue = dateTo.toISOString().split('T')[0];
+        }
+
+        $.ajax({
+            url: $('#search-form').attr('action'),
+            method: 'GET',
+            data: {
+                search: searchValue,
+                category: categoryValue,
+                date_from: dateFromValue,
+                date_to: dateToValue
+            },
+            success: function(response) {
+                var searchResultsHTML = $(response).find('.client_tbl').html();
+                $('#search-results').html(searchResultsHTML);
+            },
+            error: function(xhr, textStatus, error) {
+                console.log(error);
+            }
+        });
+    }
+});
+    </script>
+{% endblock %}

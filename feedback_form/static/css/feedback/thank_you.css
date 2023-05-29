@@ -1,0 +1,46 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.Container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: 800px;
+    background-color: #7CA47A;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    margin-top: -190px;
+    margin-left: 220px;
+    padding: 10px;
+    color:#ffffff;
+}
+h2{
+    text-align: center;
+    font-size: 70px;
+    font-weight: bolder;
+    margin-bottom: 40px;
+}
+.home{
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+    line-height: 48px;
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: #EAAD00;
+    box-shadow: 0px 4px 4px rgba(114, 114, 114);
+    border-radius: 10px;
+    border: 0px;
+}
+
+.home:hover {
+    background-color: #ffbb00; /* Update with the desired hover background color */
+  }

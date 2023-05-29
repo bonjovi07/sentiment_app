@@ -1,0 +1,43 @@
+{% extends 'SideBar.html' %}
+{% load static %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/employees/addemployee.css' %}">
+{% endblock%}
+
+{% block title %}
+    Add Employees
+{% endblock %}
+
+{% block content %}
+  <div class='add_employee_acc'>
+    <h1>ADD EMPLOYEE</h1>
+    <div class='form_container'>
+            <form class='frm' action="{% url 'feedback:processaddemployee'%}" method="POST">
+              {% csrf_token %}
+                <input type="text" name="firstname" placeholder='First Name' required/>
+                <input type="text" name="lastname" placeholder='Last Name' required/>
+                <input type="text" name="position" placeholder='Position' required/>
+                <input type="text" name="office" placeholder='Office' required/>
+                {% if user.userclass.status == 1 %}
+                <select name="acc_id" id='department' required>
+                    <option value="">Please select an office</option>
+                    {%for user in users %}
+                    <option value="{{user.id}}">{{user.first_name}}</option>
+                    {% endfor %}
+                </select>
+                {% else %}
+                <select name="acc_id" id='department' required>
+                  <option value="">Please select an office</option>
+                  <option value="{{user.id}}">{{user.first_name}}</option>
+                </select>
+                {% endif %}
+                <button type="submit" class='add'>Add</button>
+                <a href="{% url 'feedback:employeelist'  %}"><button type="button" class="cancel">Cancel</button></a>
+            </form>
+    </div>
+</div>
+
+
+
+{% endblock %}

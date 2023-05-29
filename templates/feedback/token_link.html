@@ -1,0 +1,42 @@
+{% extends 'feedbackbase.html' %}
+
+{% load tz %}
+
+{% load static %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/feedback/tokenlinks.css' %}">
+{% endblock%}
+
+{% block title %}
+    Feedback | Client-form
+{% endblock %}
+
+{% block content %}
+
+<div class="Main">
+    <div class="Container">
+        <form method="POST" action="{% url 'feedback:client_process' %}">
+            {% csrf_token %}
+            <label for="name">
+                Name <input type="text" id="name" name="name" value="{{client.client_name}}" required/>
+            </label>
+            <label for="gency">
+                Agency <input type="text" id="gency" name="gency" value="{{client.client_agency}}" />
+            </label>
+            <label for="email">
+                Email Address <input type="email" id="email" name="email" value="{{client.client_email}}" required/>
+            </label>
+            <label for="attending-staff">
+                Attending Staff <input type="text" id="email" name="email" value="{{staff.first_name}} {{staff.last_name}}" required/>
+            </label>
+            </label>
+            <p>Click the link below to provide feedback:</p>
+            <p>The link will expire at: {{ expiration_time|timezone:"Asia/Manila" }}</p>
+            <a href="{{ link }}"><button type="button">{{ link }}</button></a>
+        </form>
+</div>
+{% endblock %}
+
+
+

@@ -1,0 +1,59 @@
+{% extends 'SideBar.html' %}
+{% load static %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/reports/reports_officesummary.css' %}">
+{% endblock%}
+
+{% block title %}
+Reports
+{% endblock %}
+
+{% block content %}
+<div class='reports_page'>
+    <Header></Header>
+    <h1 class="headtitle"> FEEDBACK REPORTS </h1>
+    <div class="office_name">
+        <h3>Office:</h3>
+        <p>{{office.first_name}} OFFICE</p>
+    </div>
+    <!-- <div class='tbl_graph'>
+         PIE CHART 
+        <h2> Sentiment Analysis Report</h2>
+    </div> -->
+    <table class="report_data">
+        <tr>
+            <td>
+                <div class="clnts">
+                    <p>CLIENTS</p>
+                    <h3>{{client_count}}</h3>
+                    <h3>RESPONDENTS</h3>
+                </div>
+            </td>
+
+            <td>
+                <div class="oar">
+                    <p>OVERALL AVG. RATING</p>
+                    <h3>{{feedback_average}}</h3>
+                    <h3>AVERAGE</h3>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table class="view_reportdata">
+        <tr>
+            <td class='viewsr'>
+                <a href="{% url 'feedback:reports_feedbacks' office.id%}"><button type="button" class='vlfr'>View All Feedback Reports</button></a>
+            </td>
+
+            <td class='viewsr'>
+                <a href="{% url 'feedback:reports_viewreports' office.id%}"><button type="button" class='vsr'>View Summary Report</button></a>
+            </td>
+            <td class='viewsr'>
+                <a href="{% url 'feedback:reports_staff' office.id%}"><button type="button" class='ver'>View Employee Rating</button></a>
+            </td>
+        </tr>
+    </table>
+    <ReportList></ReportList>
+</div>
+{% endblock %}

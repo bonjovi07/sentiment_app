@@ -1,0 +1,90 @@
+{% extends 'SideBar.html' %}
+{% load static %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/reports/reports_offices.css' %}">
+{% endblock%}
+
+{% block title %}
+Reports
+{% endblock %}
+
+{% block content %}
+    <div class='reportlist_page'>
+        <h1>REPORT LIST</h1>
+        <div class='Search_bar'>
+            <form action="{% url 'feedback:report_offices_search' %}" method="GET" id="search-form">
+                <input type="text" placeholder="Search Account" name="search" id="search-input" />
+                <select name="category" id="search-category" class="filter">
+                    <option value="">Active Status</option>
+                    <option value="True">Active</option>
+                    <option value="False">Inactive</option>
+                </select>
+            </form>
+        </div>
+        <div class="client_tbl" id="search-results" >
+            <table >
+                <tr>
+                    <th>OFFICE</th>
+                    <th>LAST LOGIN</th>
+                    <th>STATUS</th>
+                    <th>ACTION</th>
+                </tr>
+                {% for user in users %}
+                <tr key={key}>
+                    <td>{{user.first_name}}</td>
+                    <td>{{user.last_login}}</td>
+                    {% if user.is_active %}
+                        <td id="active">Active</td>
+                    {% else %}
+                        <td id="inactive">Inactive</td>
+                    {% endif %}
+                    <td class="vw"><a href="{% url 'feedback:reports_officesummary' user.id%}">view</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+            <div class="pagebutton">
+                <ul class="pagination">
+                    {% if users.has_previous %}
+                        <li class="page-item"><a href="?page=1" class="page-link">&laquo; First </a></li>
+                        <li class="page-item"><a href="?page={{ users.previous_page_number }}" class="page-link"> Previous </a></li>
+                    {% endif %}
+        
+                    {% if users.has_next %}
+                        <li class="page-item"><a href="?page={{ users.next_page_number }}" class="page-link"> Next </a></li>
+                        <li class="page-item"><a href="?page={{ users.paginator.num_pages }}" class="page-link">&raquo; Last </a></li>
+        
+                    {% endif %}
+                </ul>  
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            var searchTimeout;
+    
+            $('#search-input, #search-category').on('input', function() {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(getSearchResults, 300); // Delay the search by 300 milliseconds
+            });
+    
+            function getSearchResults() {
+                var searchValue = $('#search-input').val();
+                var categoryValue = $('#search-category').val();
+                $.ajax({
+                    url: $('#search-form').attr('action'),
+                    method: 'GET',
+                    data: { search: searchValue, category: categoryValue },
+                    success: function(response) {
+                        var searchResultsHTML = $(response).find('.client_tbl').html();
+                        $('#search-results').html(searchResultsHTML);
+                    },
+                    error: function(xhr, textStatus, error) {
+                        console.log(error);
+                    }
+                });
+            }
+        });
+    </script>
+    
+{% endblock %}

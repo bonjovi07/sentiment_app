@@ -1,0 +1,108 @@
+.nav-pills {
+    margin: 100% 0;
+}
+
+.content-sidebar {
+    width: 7.5%;
+}
+
+.content-side {
+    width: 92.5%;
+}
+
+.logo {
+    position: absolute;
+    left: 1%;
+    top: 0%
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  h1{
+    color: #3A5938;
+    margin-left: 30px;
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: 800;
+  }
+  form{
+    border: 1px solid #3A5938;
+    border-radius: 15px;
+    width: 35%;
+    height: 300px;
+    padding: 50px;
+    margin-top: 70px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+  .form_container input{
+    border: 1px solid rgb(227, 227, 227);
+    border-radius: 12px;
+    width: 90%;
+    height: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    padding: 3px;
+    padding-left: 10px;
+    font-size: 12px ;
+    font-weight:700;
+  }
+  .form_container input::placeholder{
+    color: rgb(75, 75, 75);
+    padding-left: 10px;
+    font-size: 12px ;
+    font-weight:700;
+  }
+  .form_container input:focus{
+    outline: none;
+    border: 1px solid #000000;
+  }
+  h5{
+    text-align: left;
+    font-weight: 900;
+    font-size: 18px;
+    padding:5px;
+  }
+  span{
+    font-weight: 700;
+    color: #3A5938;
+  }
+  .marg{
+    margin-top: 15px;
+  }
+  .save{
+    color:white;
+    text-align: center;
+    background-color: #EAAD00;
+    border: #EAAD00;
+    border-radius: 10px;
+    padding: 8px;
+    font-weight: bolder;
+    margin-right: 10px;
+    font-size: 12px;
+    width: 90px;
+  }
+  .save:hover{
+    background-color: #ffbb00;
+    cursor: pointer;
+  }
+  .cancel{
+    text-align: center;
+    color:white;
+    background-color: #C32424;
+    border: #C32424;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 12px;
+    font-weight: bolder;
+    width: 90px;
+  }
+  .cancel:hover{
+    background-color: #ff2121;
+    cursor: pointer;
+  }

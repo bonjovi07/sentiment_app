@@ -1,0 +1,70 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family:Poppins,sans-serif;
+}
+
+.Appbar{
+    text-align: end;
+    
+}
+
+    .Appbar ul li{
+        display: inline-block;
+        vertical-align: top;
+        font-size: 24px;
+        font-weight: 700;
+        margin: 20px;
+        color: #3A5938;
+    }
+
+    #About{
+        color: #EAAD00;
+    }
+
+    #circ{
+        position: absolute;
+        width: 636px;
+        height: 620px;
+        left: -250px;
+        top: -440px;
+        background: #7CA47A;
+        border-radius: 313px;
+    }
+
+h1{
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: 7px;
+    margin-left: 120px;
+    color: #3A5938;
+}
+
+    #Cvsu{
+        margin-top: 120px;
+    }
+
+button {
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 48px;
+    color: #3A5938;
+    margin-top: 40px;
+    margin-left: 120px;
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    background: #EAAD00;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 56px;
+    border: 0px;
+}
+
+#img1{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 0px;
+    width:  690px;
+    height: 550px;
+}

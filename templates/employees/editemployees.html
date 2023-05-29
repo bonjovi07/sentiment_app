@@ -1,0 +1,41 @@
+{% extends 'SideBar.html' %}
+{% load static %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/employees/editemployee.css' %}">
+{% endblock%}
+
+{% block title %}
+    Edit Employee | {{employee.first_name}}
+{% endblock %}
+
+
+{% block content %}
+  <div class='add_employee_acc'>
+    <h1>Edit Employee: <strong>{{employee.first_name}} {{employee.last_name}}</strong> </h1>
+    <div class='form_container'>
+            <form class='frm' action="{% url 'feedback:process_edit_employee' employee.id %}" method="POST">
+              {% csrf_token %}
+                <input type="text" name="firstname" placeholder='First Name' value="{{employee.first_name}}"/>
+                <input type="text" name="lastname" placeholder='Last Name' value="{{employee.last_name}}"/>
+                <input type="text" name="position" placeholder='Position' value="{{employee.position}}" />
+                <input type="text" name="office" placeholder='Office'value = "{{employee.office}}"/>
+                {% if user.userclass.status == 1 %}
+                <select name="acc_id" id='department' required>
+                    <option value="">Please select an office</option>
+                    {%for user in users %}
+                    <option value="{{user.id}}">{{user.first_name}}</option>
+                    {% endfor %}
+                </select>
+                {% else %}
+                <select name="acc_id" id='department' required>
+                  <option value="">Please select an office</option>
+                  <option value="{{user.id}}">{{user.first_name}}</option>
+                </select>
+                {% endif %}
+                <button type="submit" class='add'>Edit</button>
+                <a href="{% url 'feedback:employeelist'  %}"><button type="button" class="cancel">Cancel</button></a>
+            </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'SideBar.html' %}
+{% load static %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/admin/admin_addacc.css' %}">
+{% endblock%}
+
+{% block title %}
+    Admin | Add Account
+{% endblock %}
+
+{% block content %}
+
+<div class='add_employee_acc'>
+  <h1>Create New Account</h1>
+ 
+  <div class="form_container">
+      <form method="post" action="{% url 'feedback:add_acc' %}" class="frm" >
+        {% if error_message %}
+        <!-- <p class="alert alert-danger text-center">
+            <strong>{{error_message}}</strong>
+        </p> -->
+        <span class="error-message">{{error_message}}</span>
+      {% endif %}
+        {% csrf_token %}
+        <input type="text" name="username" placeholder='Username' required/>
+        <input type="text" name="name" placeholder='Name' required/>
+        <input type="email" name="email" placeholder='Email' required>
+        <input type="password" name="password" placeholder='Password' required>
+        <input type="password" name="password2" placeholder='Confirm Password' required>
+        <input type="hidden" name="status" value=0>
+        <button type="submit" class="add">Create</button>
+        <a href="{% url 'feedback:adminhome'  %}"><button type="button" class="cancel">Cancel</button></a>
+      </form>
+  </div>
+</div>
+{% endblock%}

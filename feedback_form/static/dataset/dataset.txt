@@ -1,0 +1,196 @@
+The service is actually nice.	positive
+The staffs are accommodating.	positive
+I'm not happy being here. The service is horrible.	negative
+Great experience.	positive
+It is okay.	neutral
+Some of my concerns are not well addressed.	negative
+I'm satisfied with the service.	positive
+Staffs are very kind.	positive
+The process of my request is very fast.	positive
+I'm not satisfied with your staff's service.	negative
+I had a great time being here.	positive
+Nice service.	positive
+This place sucks.	negative
+The staffs are okay.	neutral
+The service is not that bad.	neutral
+The staffs are friendly and nice.	positive
+My experience here is just fine.	neutral
+I'm satisfied with my experience here.	positive
+My concerns are addressed thorough and timely.	positive
+Very nice place and the service are all good.	positive
+The staffs are grumpy and not approachable.	negative
+I had a trouble asking for my concern.	negative
+I'm satisfied with the staff's attitude because they are very kind.	positive
+Everything are good and my experience is great.	positive
+I love their way of accommodating with my concerns.	positive
+The place, staff and service are great.	positive
+The staff really seems to care and take every concern seriously.	positive
+The employees are very polite.	positive
+The service is amazing. I never encounter any problem.	positive
+I never had any complaints because the accommodation here is great.	positive
+They are very nice to their visitors and took care of our concern meticulously.	positive
+My concerns are accomplished in a short period of time.	positive
+Their employees are one of the kindest employees I ever met.	positive
+I notice that the waiting area is not that great. I hope that the employees improve the place.	negative
+The service is amazing and the staffs are very kind.	positive
+The employees are very responsive and patient with my concerns.	positive
+I'm in love with their way of talking with us. They are very nice and soft-spoken.	positive
+I can see how the employees really care about what I need and make sure I was satisfied with their service.	positive
+I'm pleased with their service. Great job!	positive
+Good atmosphere and the place is visitor-friendly.	positive
+The service is decent.	neutral
+Great experience. Kind employees.	positive
+I hope they improve when addressing their visitor's concern.	negative
+I love everything about this place.	positive
+Job well done! Continue to work in an attentive manner.	positive
+I'm very comfortable talking to the staffs.	positive
+The experience here is amazing.	positive
+Loved the experience here and delighted with how the employees assisted me.	positive
+I hope that you work to improve your service because I'm not satisfied.	negative
+The help I received was thorough and helpful.	positive
+The staff didn't accommodate me well.	negative
+I appreciate the service given to me.	positive
+I don't think that the service I encountered is great.	negative
+The employee was kinda rude when I was being assisted.	negative
+Would love to have another transaction in this office.	positive
+Wasn't that bad neither good.	neutral
+They are friendly and smiling.	positive
+I was not satisfied with the service.	negative
+It seems that the staff assigned to me wasn't that friendly at all.	negative
+It was nice knowing that they provide such service.	positive
+Overall, I didn't expect that kind of treatment.	negative
+Good work!	positive
+Nice!	positive
+Well played!	positive
+The personnel is friendly and the service is excellent.	positive
+I observe that the waiting area could be better. I hope the staff makes the location better.	negative
+Why are they so grumpy?	negative
+They look approachable.	positive
+The transaction wasn't smooth.	negative
+They look so clean.	positive
+The facility was a bit messy.	negative
+The office is well-ventilated.	positive
+No comment.	neutral
+I'm impressed!	positive
+They did a great job today!	positive
+Appreciated the kindness I received.	positive
+The staff was not attentive.	negative
+The personnel seems to be rude.	negative
+I admire the ambiance of the workplace.	positive
+I've never felt high customer satisfaction.	positive
+Great job!	positive
+They initiate things.	positive
+The guard wasn't having good instructions for us.	negative
+I don't know what to say.	neutral
+They always smile.	positive
+Well organized!	positive
+I don't like the treatment given.	negative
+I'm happy with the service.	positive
+I wasn't pleased with the outcome of my concern.	negative
+The goal wasn't met.	negative
+Good!	positive
+I wanted to congratulate them for doing such a great job!	positive
+They can't wait for a minute.	negative
+Wasn't feeling the experience.	negative
+Helpful!	positive
+Very accommodating!	positive
+Everything was addressed nicely.	positive
+The service is too good to be true.	neutral
+The waiting line is too long.	negative
+Keep up the good work!	positive
+The Cavite State University offices are well-organized and easy to navigate.	positive
+The staff members are friendly, welcoming, and helpful.	positive
+The offices are always clean and well-maintained.	positive
+The technology in the offices is up-to-date and reliable.	positive
+The office hours are convenient and flexible for students and faculty.	positive
+The offices are equipped with ample resources to support student learning and success.	positive
+The staff members are knowledgeable and able to provide accurate information and advice.	positive
+The offices provide a comfortable and productive environment for studying and working.	positive
+The offices have a positive and supportive atmosphere that fosters academic and personal growth.	positive
+The staff members are responsive to inquiries and concerns, and work quickly to resolve issues.	positive
+The offices are accessible and inclusive to students and faculty of all backgrounds and abilities.	positive
+The offices offer a wide range of services and programs to support student development and success.	positive
+The staff members are dedicated to their work and genuinely care about the well-being of students and faculty.	positive
+The offices are proactive in identifying and addressing the needs of students and faculty.	positive
+The offices promote a culture of excellence, professionalism, and continuous improvement.	positive
+Provide regular training and development opportunities for staff members to enhance their skills and knowledge.	positive
+Foster a culture of innovation and creativity by encouraging staff members to share their ideas and suggestions.	positive
+Offer more online services and resources to accommodate the needs of students who cannot visit the offices in person.	positive
+Organize more events and activities that promote student engagement and involvement in the university community.	positive
+Enhance communication and collaboration between different offices and departments to improve efficiency and effectiveness.	positive
+Establish a feedback mechanism for students and faculty to provide suggestions and recommendations for improving the offices' services and programs.	positive
+Expand the offices' hours of operation to accommodate the needs of students and faculty who have busy schedules.	positive
+Implement more environmentally-friendly practices and initiatives in the offices, such as using renewable energy sources and reducing waste.	positive
+Develop and implement a comprehensive wellness program that supports the physical, emotional, and mental health of students and staff members.	positive
+Establish partnerships and collaborations with other institutions and organizations to provide more diverse and innovative services and programs to students and faculty.	positive
+The staff members were rude and unhelpful.	negative
+The office was disorganized and chaotic.	negative
+They consistently failed to meet deadlines and deliver on their promises.	negative
+The customer service was abysmal, with long wait times and unresponsive staff.	negative
+The office environment was dirty and unkempt.	negative
+The staff members were rude and unhelpful.	negative
+The office was disorganized and chaotic.	negative
+They consistently failed to meet deadlines and deliver on their promises.	negative
+The customer service was abysmal, with long wait times and unresponsive staff.	negative
+The office environment was dirty and unkempt.	negative
+They showed a lack of professionalism and respect towards customers.	negative
+The office had outdated technology that caused frequent disruptions and delays.	negative
+The staff members were untrained and ill-equipped to handle customer inquiries.	negative
+They made numerous errors and mistakes in their work.	negative
+The office lacked transparency and accountability in their processes.	negative
+The staff members were dismissive and did not take customer concerns seriously.	negative
+They failed to provide adequate solutions or resolutions to customer problems.	negative
+The office had a culture of negligence and incompetence.	negative
+The staff members were consistently unresponsive to phone calls and emails.	negative
+The office was poorly managed, leading to a lack of efficiency and effectiveness.	negative
+They displayed a lack of empathy and understanding towards customer needs.	negative
+The office had a high turnover rate, indicating underlying issues with management.	negative
+They did not take responsibility for their mistakes and instead shifted blame onto customers.	negative
+The staff members lacked knowledge and expertise in their respective roles.	negative
+The office had a reputation for poor customer service and negative experiences.	negative
+They had a limited range of services and were unable to meet diverse customer needs.	negative
+The office lacked clear communication channels, causing confusion and misunderstandings.	negative
+They did not value customer feedback and failed to implement necessary improvements.	negative
+The staff members exhibited unprofessional behavior and inappropriate language.	negative
+The office had excessive bureaucracy and red tape, making processes unnecessarily complex.	negative
+They failed to maintain confidentiality and mishandled sensitive customer information.	negative
+The office had frequent system outages and technical glitches, disrupting operations.	negative
+The staff members lacked basic problem-solving skills and were unable to assist customers effectively.	negative
+They did not follow through on their commitments and left customers feeling neglected.	negative
+The office had limited operating hours that inconvenienced customers.	negative
+They did not provide adequate training and development opportunities for staff members.	negative
+The staff members were unorganized and struggled to keep track of customer requests.	negative
+The office had poor record-keeping practices, resulting in lost or misplaced documents.	negative
+They had a negative and unprofessional attitude towards resolving customer complaints.	negative
+The office had a reputation for long response times and unresolved issues.	negative
+They did not value customer loyalty and failed to provide incentives or rewards.	negative
+The staff members lacked effective communication skills, leading to misunderstandings.	negative
+The office had a lack of resources and infrastructure to meet customer demands.	negative
+They did not prioritize customer satisfaction and treated customers as mere transactions.	negative
+The office had a high rate of unresolved customer issues and complaints.	negative
+They did not provide clear explanations or instructions, causing confusion.	negative
+The staff members were negligent in providing accurate and up-to-date information.	negative
+The office had a negative work culture, resulting in demotivated staff members.	negative
+They did not take ownership of problems and instead passed them onto other departments.	negative
+The office had a lack of accountability for mistakes and errors made by staff members.	negative
+They failed to keep customers informed about important updates and changes.	negative
+The meeting started on time.	neutral
+The office furniture was comfortable and functional.	neutral
+They provided the necessary paperwork promptly.	neutral
+The staff members greeted customers with a smile.	neutral
+The office had a clean and organized reception area.	neutral
+They followed standard protocols and procedures.	neutral
+The customer service representative listened attentively to inquiries.	neutral
+The office had a moderate level of noise during peak hours.	neutral
+They responded to emails within a reasonable time frame.	neutral
+The staff members were polite and courteous.	neutral
+The office had a neutral color scheme for its decor.	neutral
+They maintained a professional appearance and demeanor.	neutral
+The customer service team was knowledgeable about their products.	neutral
+The office had a moderate level of foot traffic.	neutral
+They acknowledged customer feedback and suggestions.	neutral
+The staff members worked well as a team.	neutral
+The office had a moderate temperature and comfortable seating.	neutral
+They provided accurate and reliable information.	neutral
+The customer service representative addressed customer concerns effectively.	neutral
+The office had a standard waiting time for appointments.	neutral

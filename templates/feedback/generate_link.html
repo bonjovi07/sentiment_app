@@ -1,0 +1,19 @@
+{% extends 'SideBar.html' %}
+{% load static %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/feedback/generate_link.css' %}">
+{% endblock%}
+
+{% block title %}
+    Employees
+{% endblock %}
+
+{% block content %}
+<h1>GENERATE LINK</h1>
+<form action="{% url 'feedback:generate_client' %}" method="POST">
+    {% csrf_token %}
+    <button type="submit">Click to Create a Form</button>
+</form>
+
+{% endblock %}

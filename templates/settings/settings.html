@@ -1,0 +1,27 @@
+{% extends 'SideBar.html' %}
+{% load static %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/settings/settings.css' %}">
+{% endblock%}
+
+{% block title %}
+    {{user.first_name}} | Edit User
+{% endblock %}
+
+{% block content %}
+<div class='settings_page'>
+    <h1 class="headtitle"> SETTINGS: {{user.username}}  </h1>
+    <div class='form_container'>
+        <form method="POST" action="{% url 'feedback:updateusersettings' user.id  %}">
+            {% csrf_token %}
+            <input type="text" name="new_username" placeholder='New Username' value="{{user.username}}" required/>
+            <input type="text" name="new_name" placeholder='New Name' value="{{user.first_name}}" required/>
+            <input type="password" name="new_password" placeholder='New Password' />
+            <input type="password" name="confirm_password" placeholder='Confirm Password' />
+            <button type="submit" class='save'>Save</button>
+            <a href="{% url 'feedback:usersettings'  %}"><button type="button" class='cancel'>Cancel</button></a>
+        </form>
+    </div>
+</div>
+{% endblock %}

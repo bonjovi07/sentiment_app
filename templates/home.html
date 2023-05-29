@@ -1,0 +1,31 @@
+{% extends 'feedbackbase.html' %}
+{% load static %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock%}
+
+{% block title %}
+    {{user.username}} | Home
+{% endblock %}
+
+{% block content %}
+<div class="Main">
+    <header></header>
+    {% if error_message %}
+        <p class="alert alert-danger text-center">
+            <strong>{{error_message}}</strong>
+        </p>
+    {% endif %}
+    <!-- Icons -->
+        <div class="icons">
+            {% if user.userclass.status == 1%}
+            <a href="{% url 'feedback:adminhome' %}"><span class="material-icons icon-hover" title="Accounts"><span class="material-title">Accounts</span>manage_accounts</span></a>
+            {% endif %}
+            <a href="{% url 'feedback:generate_feedbackhome' %}"><span id="Generate-Link" class="material-icons" title="Generate Link"><span class="material-title">Generate Link</span> add_link </span></a>
+            <a href="{% url 'feedback:employeelist' %}"><span id="Employees" class="material-icons" title="Employee"><span class="material-title">Employee</span> badge</span></a>
+            <a href="{% url 'feedback:reportshome' %}"><span id="Reports" class="material-icons" title="Reports"><span class="material-title">Reports</span> analytics </span></a>
+            <a href="{% url 'feedback:usersettings' %}"><span id="Settings" class="material-icons" title="settings"><span class="material-title">Settings</span> settings </span></a>
+        </div>  
+</div>
+{% endblock %}

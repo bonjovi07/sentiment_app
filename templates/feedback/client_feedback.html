@@ -1,0 +1,114 @@
+{% extends 'feedbackbase.html' %}
+{% load static %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/feedback/feedback-form.css' %}">
+{% endblock%}
+
+{% block title %}
+    Feedback | Feedback Form
+{% endblock %}
+
+{% block content %}
+
+            <div class="main">
+            <!-- <Header /> -->
+            <div class="Container">
+                <!-- <img src="./images/cvsu-logo.png" alt="cvsu-logo" />
+                <p>Republic of the Philippines</p>
+                <p id="Cvsu">Cavite State University</p>
+                <p>Don Severino delas Alas Campus</p>
+                <p>Indang, Cavite</p>  -->
+                <p id="SFF">STAKEHOLDERS' FEEDBACK FORM</p>
+                <form method="POST" action="{% url 'feedback:process_feedback' %}">
+                    {% csrf_token %}
+                    <table>
+                        <tr>
+                            <th>Area of Concern</th>
+                            <td>Highly Satisfied</td>
+                            <td>Very Satisfied</td>
+                            <td>Moderately Satisfied</td>
+                            <td>Barely Satisfied</td>
+                            <td>Not Satisfied</td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>5</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th>A . Courtesy</th>
+                            <td><input type="radio" name='courtesy' value='5' placeholder="0" required></input></td>
+                            <td><input type="radio" name='courtesy' value='4' placeholder="0"></input></td>
+                            <td><input type="radio" name='courtesy' value='3' placeholder="0"></input></td>
+                            <td><input type="radio" name='courtesy' value='2' placeholder="0"></input></td>
+                            <td><input type="radio" name='courtesy' value='1' placeholder="0"></input></td>
+                        </tr>
+                        <tr>
+                            <th>B . Services</th>
+                        </tr>
+                        <tr>
+                            <th id="satisfactory">1 . Quality</th>
+                            <td><input type="radio" name='quality' value="5" placeholder="0" required></input></td>
+                            <td><input type="radio" name='quality' value="4" placeholder="0"></input></td>
+                            <td><input type="radio" name='quality' value="3" placeholder="0"></input></td>
+                            <td><input type="radio" name='quality' value="2" placeholder="0"></input></td>
+                            <td><input type="radio" name='quality' value="1" placeholder="0"></input></td>
+                        </tr>
+                        <tr>
+                            <th id="satisfactory">2 . Timeliness</th>
+                            <td><input type="radio" name='timeliness' value="5" placeholder="0" required></input></td>
+                            <td><input type="radio" name='timeliness' value="4" placeholder="0"></input></td>
+                            <td><input type="radio" name='timeliness' value="3" placeholder="0"></input></td>
+                            <td><input type="radio" name='timeliness' value="2" placeholder="0"></input></td>
+                            <td><input type="radio" name='timeliness' value="1" placeholder="0"></input></td>
+                        </tr>
+                        <tr>
+                            <th id="satisfactory">3 . Efficiency</th>
+                            <td><input type="radio" name="efficiency" value='5' placeholder="0" required></input></td>
+                            <td><input type="radio" name="efficiency" value='4' placeholder="0"></input></td>
+                            <td><input type="radio" name="efficiency" value='3' placeholder="0"></input></td>
+                            <td><input type="radio" name="efficiency" value='2' placeholder="0"></input></td>
+                            <td><input type="radio" name="efficiency" value='1' placeholder="0"></input></td>
+                        </tr>
+                        <tr>
+                            <th>C .  Physical Condition of workspace</th>
+                        </tr>
+                        <tr>
+                            <th id="satisfactory">1 . Cleanliness</th>
+                            <td><input type="radio" name='cleanliness' value='5'placeholder="0" required></input></td>
+                            <td><input type="radio" name='cleanliness' value='4'placeholder="0"></input></td>
+                            <td><input type="radio" name='cleanliness' value='3'placeholder="0"></input></td>
+                            <td><input type="radio" name='cleanliness' value='2'placeholder="0"></input></td>
+                            <td><input type="radio" name='cleanliness' value='1'placeholder="0"></input></td>
+                        </tr>
+                        <tr>
+                            <th id="satisfactory">2 . Comfort</th>
+                            <td><input type="radio" name='comfort' value='5' placeholder="0" required></input></td>
+                            <td><input type="radio" name='comfort' value='4' placeholder="0"></input></td>
+                            <td><input type="radio" name='comfort' value='3' placeholder="0"></input></td>
+                            <td><input type="radio" name='comfort' value='2' placeholder="0"></input></td>
+                            <td><input type="radio" name='comfort' value='1' placeholder="0"></input></td>
+                        </tr>
+                        <tr></tr>
+                    </table>
+                    <label>Comments and Suggestion:</label>
+                    <textarea id="" name="comments" placeholder="Input comments and suggestion" required></textarea>
+                    <input type="hidden" name="client_id" value="{{client.id}}" />
+                    <button type="submit">Proceed</button>
+                </form>
+            </div>
+        </div>
+        <script>
+            // Refresh the page once after it opens
+            if (performance.navigation.type !== 1) {
+                // Perform the refresh only if it's not a navigation reload
+                window.onload = function () {
+                    window.location.reload();
+                };
+            }
+        </script>
+{% endblock %}

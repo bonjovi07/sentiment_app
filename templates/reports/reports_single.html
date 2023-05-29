@@ -1,0 +1,129 @@
+{% extends 'feedbackbase.html' %}
+{% load static %}
+{% load tz %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/reports/reports_single.css' %}">
+{% endblock%}
+
+{% block title %}
+Reports
+{% endblock %}
+
+{% block content %}
+<h4>Client Name: <span>{{client.client_name}}</span></h4> 
+<h4>Date: <span>{{ client.client_visit_date|timezone:"Asia/Manila"|date:"F j, Y H:i A" }}</span></h4>
+<h4>Feedback Polarity: <span>{{sentiment.sentiment_analysis}}</span></h4>
+<div class="main">
+    <div class="Container">
+        <p id="SFF">STAKEHOLDERS' FEEDBACK FORM</p>
+            <table>
+                <tr class="heads">
+                    <th>Area of Concern</th>
+                    <td>Highly</td>
+                    <td>Very Satisfied</td>
+                    <td>Moderately Satisfied</td>
+                    <td>Barely Satisfied</td>
+                    <td>Not Satisfied</td>
+                    <td>Average Rating</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <th>A . Courtesy</th>
+                    <td>{% if feedback.feedback_courtesy == 5%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_courtesy == 4%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_courtesy == 3%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_courtesy == 2%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_courtesy == 1%}✓{% endif %}</td>
+                <td>{{feedback.feedback_courtesy}}</td>
+                </tr>
+                <tr>
+                    <th>B . Services</th>
+                </tr>
+                <tr>
+                    <th id="satisfactory">1 . Quality</th>
+                    <td>{% if feedback.feedback_quality == 5%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_quality == 4%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_quality == 3%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_quality == 2%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_quality == 1%}✓{% endif %}</td>
+                <td>{{feedback.feedback_quality}}</td>
+                </tr>
+                <tr>
+                    <th id="satisfactory">2 . Timeliness</th>
+                    <td>{% if feedback.feedback_timeless == 5%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_timeless == 4%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_timeless == 3%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_timeless == 2%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_timeless == 1%}✓{% endif %}</td>
+                <td>{{feedback.feedback_timeless}}</td>
+                </tr>
+                <tr>
+                    <th id="satisfactory">3 . Efficiency</th>
+                    <td>{% if feedback.feedback_efficiency == 5%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_efficiency == 4%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_efficiency == 3%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_efficiency == 2%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_efficiency == 1%}✓{% endif %}</td>
+                <td>{{feedback.feedback_efficiency}}</td>
+                </tr>
+                <tr>
+                    <th>C .  Physical Condition of workspace</th>
+                </tr>
+                <tr>
+                    <th id="satisfactory">1 . Cleanliness</th>
+                    <td>{% if feedback.feedback_cleanliness == 5%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_cleanliness == 4%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_cleanliness == 3%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_cleanliness == 2%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_cleanliness == 1%}✓{% endif %}</td>
+                <td>{{feedback.feedback_efficiency}}</td>
+                </tr>
+                <tr>
+                    <th id="satisfactory">2 . Comfort</th>
+                    <td>{% if feedback.feedback_comfort == 5%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_comfort == 4%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_comfort == 3%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_comfort == 2%}✓{% endif %}</td>
+                <td>{% if feedback.feedback_comfort == 1%}✓{% endif %}</td>
+                <td>{{feedback.feedback_comfort}}</td>
+                </tr>
+                <tr>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td id="quarterly-report">Overall Average Rating</td>
+                    <td class="rating">{{rating}}</td>
+                </tr>
+            </table>
+            <label>Comments and Suggestion:</label>
+            <textarea disabled="yes" name="comments" placeholder= "{{feedback.feedback_comments}}"></textarea>
+            <div class="fback">
+                <!-- <div class="outcome">
+                    {% if sentiment.sentiment_analysis == 'positive' %}
+                    <img src="{% static 'image/reports/smiley.png' %}">
+                    {% elif sentiment.sentiment_analysis == 'negative' %}
+                    <img src="{% static 'image/reports/sad.png' %}">
+                    {% else %}
+                    <img src="{% static 'image/reports/neutral.png' %}">
+                    {% endif %}
+                </div> -->
+            </div>
+            <div class='back'>
+                <a href="{% url 'feedback:reports_feedbacks' office.id%}"><button type="button" class='back_button'>Back</button></a>
+            </div>
+    </div>
+</div>
+{% endblock %}

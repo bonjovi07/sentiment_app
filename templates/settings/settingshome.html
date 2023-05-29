@@ -1,0 +1,47 @@
+{% extends 'SideBar.html' %}
+{% load static %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/settings/settingshome.css' %}">
+{% endblock%}
+
+{% block title %}
+    {{user.first_name}} | User
+{% endblock %}
+
+{% block content %}
+<div class='settings_page'>
+    <h1 class="headtitle"> SETTINGS: {{user.username}}  </h1>
+    <div class='form_container'>
+        <form method="POST" action="{% url 'feedback:updateusersettings' user.id  %}">
+            {% csrf_token %}
+            <h5>Username: <span>{{user.username}}</span></h5>
+            <h5>Name: <span>{{user.first_name}}</span></h5>
+            <h5>Email: <span>{{user.email}}</span></h5>
+            <h5>User type: <span>{%if user.userclass.status == 1%} Admin {%else%} User Office {%endif%}</span></h5>
+            <!-- {% url 'feedback:editusersettings'%} -->
+            <a href="#" data-bs-toggle="modal" data-bs-target="#editModal"><button type="button marg" class='save'>Edit</button></a>
+            <a href="{% url 'feedback:adminhome'  %}"><button type="button" class='cancel marg'>Back</button></a>
+        </form>
+    </div>
+</div>
+<!-- Delete Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Confirmation</h5>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to edit {{user.first_name}}?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Back</button>
+                <a href="{% url 'feedback:editusersettings'%}">
+                    <button type="button" class="btn btn-warning">Edit</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

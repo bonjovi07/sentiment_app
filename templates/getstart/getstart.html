@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block pagecss %}
+    <link rel="stylesheet" href="{% static 'css/getstart.css' %}">
+{% endblock%}
+
+{% block title %}
+    Get Start!Feedback Form!
+{% endblock %}
+
+
+{% block content %}
+<div className="Main">
+    <div id="circ"></div>
+    <div className="Appbar">
+        <ul>
+            <li>Login</li>
+            <li>Support</li>
+            <li id="About">About</li>
+        </ul>
+    </div>
+    <h1 id="Cvsu">CAVITE STATE UNIVERSITY</h1>
+    <h1>STAKEHOLDERS FEEDBACK FORM</h1>
+    <form action="{% url 'feedback:loginview'  %}" method="GET">
+        <button type="submit">Get Started</button>
+    </form>
+
+    <img src="{% static 'image/getstart/image1.png' %}" alt="" id="img1"/>
+</div>
+{% endblock %}

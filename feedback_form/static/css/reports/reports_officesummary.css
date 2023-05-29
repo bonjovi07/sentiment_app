@@ -1,0 +1,129 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+.reports_page{
+    margin-top: 18px;
+}
+
+.headtitle{
+    color: #3A5938;
+    margin-left: 70px;
+    margin-top:20px;
+    font-size: 30px;
+    font-weight: 800;
+}
+.subhead{
+    color: #3A5938;
+    margin-left: 60px;
+    margin-bottom: none;
+    font-size: 15px;
+}
+.pie_chart h2{
+    color:#3A5938;
+    font-size: 20px;
+}
+
+
+.office_name{
+    text-align: right;
+    margin-right: 5%;
+}
+
+.office_name h3, .office_name p{
+    margin-right: 1%;
+}
+
+.office_name p{
+    color: #3A5938;
+    font-weight: bold;
+}
+
+
+.report_data{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5%;
+    margin-bottom: none;
+  }
+
+.clnts{
+    background-color: #648662;
+    margin: 40px;
+}
+.oar{
+    background-color: #899F88;
+    margin: 40px;
+
+}
+
+.clnts, .oar{
+    width:250px;
+    height: 19%;
+    padding: 20px;
+    text-align: center;
+}
+
+.clnts p, .oar p{
+    font-weight: bold;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.clnts h3, .oar h3{
+    color: #EAAD00;
+    margin-bottom: 5px;
+    font-size: 22px;
+    text-align: center;
+}
+
+
+.view_reportdata{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.viewsr{
+    text-align: center;  
+    margin-right: 32px;
+}
+
+.vlfr, .vsr, .ver{
+    color:white;
+    background-color: #3A5938;
+    border: #3A5938;
+    border-radius: 10px;
+    padding: 15px;
+    font-weight: bolder;
+    margin: 20px;
+  }
+
+  .vlfr:hover, .vsr:hover, .ver:hover{
+    background-color: #EAAD00;
+  }
+
+
+
+
+  /* Table */
+
+  .tbl_graph{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    margin-bottom: 50px;
+    border: none;
+    padding: none;
+  }
+  .pie_chart h2{
+    margin-right: 40px;
+  }
+
+
+
+
+
+    /* CHART */

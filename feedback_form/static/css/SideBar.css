@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .header {
+    height: 60px;
+    background-color: #ffffff;
+    border-bottom: 1px rgb(144, 144, 144) solid;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    width: 100vw;
+  }
+  
+  .header p {
+    text-align: right;
+    padding: 20px;
+    margin: 0 20px 0 10px;
+    color: #3a5938;
+    font-size: 16px;
+    font-weight: bolder;
+  }
+  
+  .main-container {
+    display: flex;
+    max-height: 100vh;
+    overflow-y: hidden;
+  }
+  
+  img {
+    width: 100px;
+    height: 120px;
+    position: absolute; /* Set the image to absolute position */
+    margin-left: 12px;
+    margin-top: 12px; /* Add a fixed margin from the top */
+    z-index: 3; /* Set a higher z-index to position it above other elements */
+    order: 1;
+  }
+  
+  .icons {
+    width: 5%;
+    background-color: #3a5938;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: absolute; /* Change position to absolute */
+    left: 0; /* Position it to the left */
+    top: 0; /* Position it at the top */
+    z-index: 2; /* Add a lower z-index to position it above the .header */
+  }
+  
+  .material-icons {
+    font-size: 25px;
+    color: white;
+    margin: 10px;
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    align-items: center; /* Center the icon horizontally */
+    justify-content: center; /* Center the icon vertically */
+    cursor: pointer;
+  }
+  
+  .icon-hover:hover {
+    text-align: center;
+    color: #000000;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 2px 2px rgb(255, 255, 255);
+  }
+  
+  #Accounts {
+    margin-top: 80px;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .content {
+    flex: 1;
+    vertical-align: top;
+    word-wrap: break-word; /* For older browsers */
+    overflow-wrap: break-word; /* For newer browsers */
+    overflow-y: auto;
+  }
+  
+  .main-content{
+    padding:10px;
+    padding-left: 100px;
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 80px; /* Add margin equal to header height */
+  }
+/* Dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown toggle */
+.dropdown .material-icons {
+  font-size: 25px;
+  color: white;
+  margin: 10px;
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  left: 100%;
+  top: 0;
+  overflow-y: auto;
+  max-height: 200px;
+  white-space: nowrap;
+  width: max-content;
+  padding-top: 10px;
+}
+
+/* Dropdown content links */
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Show dropdown content when button is hovered */
+
+
+/* Position dropdown content absolutely */
+.dropdown-content {
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 0;
+}
+
+/* Hide dropdown content by default */
+.dropdown-content {
+  display: none;
+}
+
+/* Show dropdown content when active class is added */
+.dropdown-content.active {
+  display: block;
+}

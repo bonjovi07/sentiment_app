@@ -1,0 +1,130 @@
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h4{
+    margin-top: 20px;
+    margin-left: 70px;
+    font-size: 18px;
+    font-weight: 700;
+}
+span{
+    font-weight: normal;
+    color: #3A5938;
+}
+h5{
+    margin-left: 0px;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin-top: 5%;
+}
+.Container{
+    width: auto;
+    height: 500px;
+    padding: 10px;
+    border:2px;
+    border-style: solid;
+    border-color: #D6D2D2;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+    overflow-y: scroll; 
+    overflow-x: hidden;
+  }
+  
+  ::-webkit-scrollbar{
+    width:7px;
+  }
+  ::-webkit-scrollbar-track{
+    border-radius: 10px;
+    margin: 10px;
+  }
+  ::-webkit-scrollbar-thumb{
+    background: #D6D2D2;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover{
+    background: #3A5938;
+  }
+    .Container p{
+        font-size: 12px;
+        margin:7px;
+    }
+    #Cvsu{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: bolder;
+        font-size: 14px;
+    }
+    #SFF{
+        font-weight: bolder;
+        padding: 10px;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+  
+  table{
+    width: 100%;
+    padding: 10px;
+  }
+  td{
+    padding: 10px;
+  }
+  th{
+    padding: 15px;
+    text-align: left;
+  }
+  .rating{
+    font-weight: bolder;
+    font: 14px;
+  }
+  #satisfactory{
+    font-weight: normal;
+  }
+  #quarterly-report{
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bolder;
+  }
+  /* img{
+    width: 80px;
+    height: 80px;
+  } */
+label{
+    display: inline-block;
+    vertical-align: top;
+    font-weight: bolder;
+    margin-right: 60px;
+}
+textarea{
+    height: auto;
+    width: 610px;
+    padding: 10px;
+}
+textarea::placeholder{
+    font-weight: bold;
+    color: #000000;
+}
+  button{
+    margin: 20px;
+    margin-left: 120px;
+    padding: 7px;
+    width: 100px;
+    background-color: #EAAD00;
+    border: none;
+    color: #ffffff;
+    font-weight: bolder;
+    border-radius: 10px;
+  }
+  button:hover{
+    background-color: #ffbb00;
+    cursor: pointer;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }

@@ -1,0 +1,125 @@
+{% extends 'feedbackbase.html' %}
+{% load static %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/reports/reports_viewreports.css' %}">
+{% endblock%}
+
+{% block title %}
+Reports
+{% endblock %}
+
+{% block content %}
+<h1> OVERALL REPORT </h1>
+<h4>OFFICE: <span>{{office.first_name}}</span></h4> 
+<div class="Search_bar">
+    <form action="{% url 'feedback:reports_viewreports_search' user.id %}" method="GET" id="search-form">
+        <label>From:</label>
+        <input type="date" name="date_from" id="date-from" placeholder="Date From" class="filter"/>
+        <label>To:</label>
+        <input type="date" name="date_to" id="date-to" placeholder="Date To" class="filter"/>
+        <input type="submit" id="filter-button" value="Filter Date"/>
+    </form>
+</div>
+<div class="main">
+    <div class="Container">
+        <p id="SFF">STAKEHOLDERS' FEEDBACK FORM</p>
+            <table>
+                <tr class="heads">
+                    <th>Area of Concern</th>
+                    <td>Highly</td>
+                    <td>Very Satisfied</td>
+                    <td>Moderately Satisfied</td>
+                    <td>Barely Satisfied</td>
+                    <td>Not Satisfied</td>
+                    <td>Average Rating</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <th>A . Courtesy</th>
+                    <td>{{ courtesy_counts.5|default_if_none:'' }}</td>
+                    <td>{{ courtesy_counts.4|default_if_none:'' }}</td>
+                    <td>{{ courtesy_counts.3|default_if_none:'' }}</td>
+                    <td>{{ courtesy_counts.2|default_if_none:'' }}</td>
+                    <td>{{ courtesy_counts.1|default_if_none:'' }}</td>
+                    <td class="rating">{{ courtesy_rating }}</td>
+                </tr>
+                <tr>
+                    <th>B . Services</th>
+                </tr>
+                <tr>
+                    <th id="satisfactory">1 . Quality</th>
+                    <td>{{ quality_counts.5|default_if_none:'' }}</td>
+                    <td>{{ quality_counts.4|default_if_none:'' }}</td>
+                    <td>{{ quality_counts.3|default_if_none:'' }}</td>
+                    <td>{{ quality_counts.2|default_if_none:'' }}</td>
+                    <td>{{ quality_counts.1|default_if_none:'' }}</td>
+                    <td class="rating">{{ quality_rating }} </td>
+                </tr>
+                <tr>
+                    <th id="satisfactory">2 . Timeliness</th>
+                    <td>{{ timeless_counts.5|default_if_none:'' }}</td>
+                    <td>{{ timeless_counts.4|default_if_none:'' }}</td>
+                    <td>{{ timeless_counts.3|default_if_none:'' }}</td>
+                    <td>{{ timeless_counts.2|default_if_none:'' }}</td>
+                    <td>{{ timeless_counts.1|default_if_none:'' }}</td>
+                    <td class="rating">{{ timeless_rating }} </td>
+                </tr>
+                <tr>
+                    <th id="satisfactory">3 . Efficiency</th>
+                    <td>{{ efficiency_counts.5|default_if_none:'' }}</td>
+                    <td>{{ efficiency_counts.4|default_if_none:'' }}</td>
+                    <td>{{ efficiency_counts.3|default_if_none:'' }}</td>
+                    <td>{{ efficiency_counts.2|default_if_none:'' }}</td>
+                    <td>{{ efficiency_counts.1|default_if_none:'' }}</td>
+                    <td class="rating">{{ efficiency_rating }} </td>
+                </tr>
+                <tr>
+                    <th>C .  Physical Condition of workspace</th>
+                </tr>
+                <tr>
+                    <th id="satisfactory">1 . Cleanliness</th>
+                    <td>{{ cleanliness_counts.5|default_if_none:'' }}</td>
+                    <td>{{ cleanliness_counts.4|default_if_none:'' }}</td>
+                    <td>{{ cleanliness_counts.3|default_if_none:'' }}</td>
+                    <td>{{ cleanliness_counts.2|default_if_none:'' }}</td>
+                    <td>{{ cleanliness_counts.1|default_if_none:'' }}</td>
+                    <td class="rating">{{ cleanliness_rating }} </td>
+                </tr>
+                <tr>
+                    <th id="satisfactory">2 . Comfort</th>
+                    <td>{{ comfort_counts.5|default_if_none:'' }}</td>
+                    <td>{{ comfort_counts.4|default_if_none:'' }}</td>
+                    <td>{{ comfort_counts.3|default_if_none:'' }}</td>
+                    <td>{{ comfort_counts.2|default_if_none:'' }}</td>
+                    <td>{{ comfort_counts.1|default_if_none:'' }}</td>
+                    <td class="rating">{{ comfort_rating }} </td>
+                </tr>
+                <tr>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td id="quarterly-report">Overall Average Rating</td>
+                    <td class="rating">{{feedback_average}}</td>
+                </tr>
+            </table>
+            <div class='back'>
+                <a href="{% url 'feedback:reports_officesummary' office.id%}"><button type="button" class='back_button'>Back</button></a>
+            </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+

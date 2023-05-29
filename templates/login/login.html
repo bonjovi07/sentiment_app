@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/logins.css' %}">
+{% endblock%}
+
+{% block title %}
+    Login | Stake Holders' Feedback Forms
+{% endblock %}
+
+{% block content %}
+<div class="Main">
+    <div class="FormContainer">
+        <img src="{% static 'image/login/cvsu-logo.png' %}" alt="" id="cvsu-logo"/>
+        <div class="Forms">
+            <h1>LOGIN</h1>
+            <h6>Cavite State University Stakeholders Feedback Form</h6>
+
+            <form class="Auth-form" method="POST" action="{% url 'feedback:process' %}">
+                {% csrf_token %}
+                {% for message in messages %}
+                <span>{{ message }}</span>
+                {% endfor %}
+                <input type="text" placeholder="Username" name="username"/>
+                <input type="password" placeholder="Password" name="password"/>
+                <button type="submit">Login</button>
+                <p>Having trouble logging in?<a href="">Contact Us</a></p>
+            </form>
+        </div>
+        <!-- <p class="credits">© CVSU 2023</p> -->
+    </div>
+    <div class="ImageContainer">
+    </div>
+</div>
+    </form>
+</div>
+
+
+
+
+
+
+{% endblock %}

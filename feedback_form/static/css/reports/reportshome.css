@@ -1,0 +1,78 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .reports_page{
+      margin-top: 18px;
+  }
+  h1{
+      color: #3A5938;
+      margin-left: 70px;
+      margin-top:20px;
+      font-size: 30px;
+      font-weight: 800;
+  }
+
+
+
+.tsr{
+    background-color: #3A5938
+}
+
+.tc{
+    background-color: #648662;
+}
+.oar{
+    background-color: #899F88;
+
+}
+
+.tsr, .tc, .oar{
+    width:220px;
+    height: 19%;
+    padding: 20px;
+    margin-right: 20px;
+
+}
+
+.tsr p, .tc p, .oar p{
+    font-weight: bold;
+    color: white;
+    font-size: 12px;
+    text-align: left;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.tsr h3, .tc h3, .oar h3{
+    color: #EAAD00;
+    margin-bottom: 5px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.listoffice{
+    margin-top: 10%;
+    text-align: right;  
+    margin-right: 10%;
+}
+
+.lor{
+    color:white;
+    background-color: #3A5938;
+    border: #3A5938;
+    border-radius: 10px;
+    padding: 15px;
+    font-weight: bolder;
+  }
+
+  .lor:hover{
+    background-color: #EAAD00;
+  }
+
+  .report_data{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10%;
+  }

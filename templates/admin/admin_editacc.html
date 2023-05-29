@@ -1,0 +1,36 @@
+{% extends 'SideBar.html' %}
+{% load static %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/admin/admin_editacc.css' %}">
+{% endblock%}
+
+{% block title %}
+    Admin | Edit Accounts
+{% endblock %}
+
+{% block content %}
+    <div class='add_employee_acc'>
+      <h1>Edit: <strong>{{accounts.username}}</strong></h1>
+      {% if error_message %}
+        <p class="alert alert-danger text-center">
+            <strong>{{error_message}}</strong>
+        </p>
+      {% endif %}
+      <div class="form_container">
+          <form method="post" action="{% url 'feedback:process_acc_edit' accounts.id %}" class="frm" >
+            {% csrf_token %}
+            <input type="text" name="username" placeholder='Username' value="{{accounts.username}}" required/>
+            <input type="text" name="name" placeholder='Name' value="{{accounts.first_name}}" required/>
+            <input type="email" name="email" placeholder='Email' value="{{accounts.email}}" required>
+            <input type="password" name="password" placeholder='Password'>
+            <input type="password" name="password2" placeholder='Confirm Password'>
+            <input type="hidden" name="status" value=0>
+            <button type="submit" class="add">Edit User</button>
+            <a href="{% url 'feedback:adminhome'  %}"><button type="button" class="cancel">Cancel</button></a>
+          </form>
+      </div>
+    </div>
+
+
+{% endblock %}

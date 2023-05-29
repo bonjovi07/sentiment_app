@@ -1,0 +1,161 @@
+{% extends 'SideBar.html' %}
+{% load static %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/employees/employeehome.css' %}">
+{% endblock%}
+
+{% block title %}
+    Employees
+{% endblock %}
+
+{% block content %}
+<div class='employees_page'>
+    <h1 class="headtitle"> EMPLOYEES </h1>
+    <div class='Search_bar'>
+        <form action="{% url 'feedback:employeesearch' %}" method="GET" id="search-form">
+            <input type="text" placeholder="Search Employee" name="search" id='search-input' />
+            {% if user.userclass.status == 1%}
+                <select name="category" id="search-category" class="filter">
+                    <option value="">Office</option>
+                    {%for user in users %}
+                    <option value="{{user.id}}">{{user.first_name}}</option>
+                    {% endfor %}
+                </select>
+            {% endif %}
+            <select name="active" id="search-active" class="filter">
+                <option value="">Status</option>
+                <option value="True">Active</option>
+                <option value="False">Inactive</option>
+            </select>
+        </form>
+    </div>
+    <div class="accounts_tbl" id="search-results">
+        <table>
+            <tr>
+                <th>Department</th>
+                <th>First name</th>
+                <th>Last Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Status</th>
+                <th colspan="2">Actions</th>
+            </tr>
+            {% for employee in employees %}
+            <tr key={key}>
+                <td>{{employee.office_user.first_name }}</td>
+                <td>{{employee.first_name}}</td>
+                <td>{{employee.last_name}}</td> 
+                <td>{{employee.position}}</td>
+                <td>{{employee.office}}</td>
+                {% if employee.is_active %}
+                        <td id="active">Active</td>
+                    {% else %}
+                        <td id="inactive">Inactive</td>
+                    {% endif %}
+                <td class="action-icons">
+                    <a href="{% url 'feedback:edit_employee' employee.id %}">
+                        <span id="edit" class="material-icons" title="edit">edit</span>
+                    </a>
+                    {% if employee.is_active %}
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#deactivateModal{{employee.id}}">
+                        <span id="delete" class="material-icons">do_not_disturb_on</span>
+                    </a>
+                    {% else %}
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#activateModal{{employee.id}}">
+                        <span id="activate" class="material-icons">check_circle</span>
+                    </a>
+                    {% endif %}
+                </td>
+
+
+            </tr>
+             <!-- Delete Modal -->
+             <div class="modal fade" id="deactivateModal{{ employee.id }}" tabindex="-1" role="dialog" aria-labelledby="deactivateModal{{ employee.id }}Label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deactivateModal{{ employee.id }}Label">Confirmation</h5>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to Deactivate this employee?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <a href="{% url 'feedback:deactivate_employee' employee.id %}">
+                                <button type="button" class="btn btn-danger">Deactivate</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="activateModal{{ employee.id }}" tabindex="-1" role="dialog" aria-labelledby="activateModal{{ employee.id }}Label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="activateModal{{ employee.id }}Label">Confirmation</h5>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to Activate this employee?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <a href="{% url 'feedback:activate_employee' employee.id %}">
+                                <button type="button" class="btn btn-success">Activate</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </table>
+        <div class="pagebutton">
+            <ul class="pagination">
+                {% if employees.has_previous %}
+                    <li class="page-item"><a href="?page=1" class="page-link">&laquo; First </a></li>
+                    <li class="page-item"><a href="?page={{ employees.previous_page_number }}" class="page-link"> Previous </a></li>
+                {% endif %}
+    
+                {% if employees.has_next %}
+                    <li class="page-item "><a href="?page={{ employees.next_page_number }}" class="page-link"> Next </a></li>
+                    <li class="page-item"><a href="?page={{ employees.paginator.num_pages }}" class="page-link">Last &raquo; </a></li>
+    
+                {% endif %}
+            </ul> 
+        </div> 
+        <div class='Add_Office'>
+            <a href="{% url 'feedback:addemployee'  %}"><button type="button" onClick="">ADD EMPLOYEE </button></a>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        var searchTimeout;
+
+        $('#search-input, #search-category, #search-active').on('input', function() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(getSearchResults, 300); // Delay the search by 300 milliseconds
+        });
+
+        function getSearchResults() {
+            var searchValue = $('#search-input').val();
+            var categoryValue = $('#search-category').val();
+            var activeValue = $('#search-active').val();
+            $.ajax({
+                url: $('#search-form').attr('action'),
+                method: 'GET',
+                data: { search: searchValue, category: categoryValue, active: activeValue },
+                success: function(response) {
+                    var searchResultsHTML = $(response).find('.accounts_tbl').html();
+                    $('#search-results').html(searchResultsHTML);
+                },
+                error: function(xhr, textStatus, error) {
+                    console.log(error);
+                }
+            });
+        }
+    });
+</script>
+
+{% endblock %}

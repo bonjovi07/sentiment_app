@@ -1,0 +1,56 @@
+{% extends 'SideBar.html' %}
+{% load static %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/reports/reportshome.css' %}">
+{% endblock%}
+
+{% block title %}
+Reports
+{% endblock %}
+
+{% block content %}
+<div class='reports_page'>
+    <Header></Header>
+    <h1 class="headtitle"> REPORTS </h1>
+    <table class="report_data">
+        <tr>
+            {% if user.userclass.status == 1%}
+            <td>
+                <div class="tsr">
+                    <p>NUMBER OF ACTIVE OFFICES</p>
+                    <h3>{{obj.user_count}}</h3>
+                    <h3>OFFICE</h3>
+                </div>
+            </td>
+            {% endif %}
+            <td>
+                <div class="tc">
+                    <p>TOTAL CLIENTS </p>
+                    <h3>{{obj.client_count}}</h3>
+                    <h3>RESPONDENTS</h3>
+                </div>
+            </td>
+
+            <td>
+                <div class="oar">
+                    <p>OVERALL AVG. RATING</p>
+                    <h3>{{obj.feedback_average}}</h3>
+                    <h3>AVERAGE</h3>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+
+    <div class='listoffice'>
+        {% if user.userclass.status == 1%}
+            <a href="{% url 'feedback:report_offices' %}"><button type="button" class='lor'>List of Office Reports</button></a>
+        {% else %}
+            <a href="{% url 'feedback:reports_officesummary' user.id %}"><button type="button" class='lor'>Office Report</button></a>
+        {% endif %}
+    </div>
+    <ReportList></ReportList>
+
+</div>
+{% endblock %}

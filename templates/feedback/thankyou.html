@@ -1,0 +1,21 @@
+{% extends 'SideBar.html' %}
+{% load static %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/feedback/thank_you.css' %}">
+{% endblock%}
+
+{% block title %}
+    Thankyou!
+{% endblock %}
+
+{% block content %}
+<div class="head">
+    <!-- <Header /> --> 
+    <div class="Container">
+        <h2>THANK YOU!</h2>
+        <a href="{% url 'feedback:home' %}" class="home btn">Home</a>
+    </div>
+    <!-- <Footer /> -->
+</div>
+{% endblock %}

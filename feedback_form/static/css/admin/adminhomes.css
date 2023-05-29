@@ -1,0 +1,132 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    color: #3A5938;
+    margin-left: 70px;
+    margin-top:20px;
+    font-size: 30px;
+    font-weight: 800;
+    display: inline-block;
+}
+.Search_bar{
+  text-align: right;
+  margin-right: 4%;
+}
+.Search_bar input[type=text] {
+  padding: 4px;
+  padding-left: 10px;
+  width: 215px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  font-size: 12px;
+}
+.Search_bar input:focus{
+  outline: none;
+  border: 1.5px solid #000000;
+}
+table {
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    width: 95%;
+    height: auto;
+    padding: 10px;
+    border-collapse: collapse;
+  }
+  th{
+    font-size: 18px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  td{
+    text-align: center;
+    font-size: 14.5px;
+    padding:1px;
+    border-top: 1px solid rgb(227, 227, 227);
+  }
+.action-icons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 5px;
+}
+#edit {
+    color: #3A5938;
+  }
+#delete {
+    color: #C32424;
+}
+#activate {
+  color: #bcb535;
+}
+.material-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+.Add_Account{
+  margin-top: 10px;
+  margin-right: 5%;
+  text-align: right;
+}
+.Add_Account button{
+  color:white;
+  background-color: #EAAD00;
+  border: #EAAD00;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.Add_Account button:hover{
+  background-color: #ffbb00;
+  cursor: pointer;
+}
+.pagebutton {
+  display:flex;
+  justify-content: center;
+  margin: 10px;
+}
+.page-item a.page-link {
+  color: #3A5938;
+  font-weight: 700;
+  font-size: 14px;
+}
+.pagebutton {
+  display:flex;
+  justify-content: center;
+  margin: 10px;
+}
+#active{
+  font-weight: bold;
+  color: #3A5938;
+}
+#inactive{
+  font-weight: bold;
+  color: #C32424;
+}
+.filter{
+  font-size: 12px;
+  padding: 4px;
+  border: 1px solid gray;
+}
+.filter:hover{
+  cursor: pointer;
+  padding: 5px;
+}
+.filter:focus{
+  cursor: pointer;
+  outline: none;
+  border: 1.2px solid #000000;
+}

@@ -1,0 +1,73 @@
+{% extends 'feedbackbase.html' %}
+{% load static %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/feedback/clientforms.css' %}">
+{% endblock%}
+
+{% block title %}
+    Feedback | Client-form
+{% endblock %}
+
+{% block content %}
+<div class="Main">
+    <!-- <Header /> -->
+    <div class="Container">
+        <form id="feedbackForm" method="POST" action="{% url 'feedback:client_process' %}">
+            {% csrf_token %}
+            <label for="name">
+                Name <input type="text" id="name" name="name" required/>
+            </label>
+            <label for="gency">
+                Agency <input type="text" id="gency" name="gency" />
+            </label>
+            <label for="email">
+                Email Address <input type="email" id="email" name="email" required/>
+            </label>
+            <label for="staff">
+                Attending Staff<br> <select name="staff" required>
+                    <option value="">Please select an attending staff</option>
+                    {% for employee in employees %}
+                        <option value="{{ employee.id }}">{{ employee.first_name }} {{ employee.last_name }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+            <br>
+            <label for="pov">Purpose of visit</label>
+            <textarea id="pov" name="pov"></textarea>
+            <!-- <p>By proceeding you agreed to our <span>Terms & Agreements.</span></p> -->
+            <button type="button" id="proceedBtn" class="proceed">Proceed</button>
+            <a href="{% url 'feedback:generate_feedbackhome' %}">
+                <button type="button" class="cancel">Cancel</button>
+            </a>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="getlink" tabindex="-1" role="dialog" aria-labelledby="getlinkLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="getlinkLabel">Confirmation</h5>
+            </div>
+            <div class="modal-body">
+                Do you wish to proceed in creating a Link?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" id="proceedModalBtn" class="btn btn-success">Proceed</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("proceedBtn").addEventListener("click", function() {
+        $('#getlink').modal('show');
+    });
+
+    document.getElementById("proceedModalBtn").addEventListener("click", function() {
+        document.getElementById("feedbackForm").submit();
+    });
+</script>
+{% endblock %}

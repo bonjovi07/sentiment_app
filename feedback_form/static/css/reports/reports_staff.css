@@ -1,0 +1,133 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+  color: #3A5938;
+  margin-left: 70px;
+  margin-top:50px;
+  font-size: 30px;
+  font-weight: 800;
+}
+h4{
+  margin-top: 20px;
+  margin-left: 70px;
+  font-size: 18px;
+  font-weight: 700;
+}
+span{
+  font-weight: normal;
+  color: #EAAD00;
+}
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 100vh;
+}
+.container{
+  width: auto;
+  height: 50%;
+  padding: 10px;
+  margin-bottom: 20%;
+  border:2px;
+  border-style: solid;
+  border-color: #D6D2D2;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  font-size: 12px;
+  overflow-y: scroll; 
+  overflow-x: hidden;
+}
+.Search_bar {
+  margin-bottom: 1%;
+  text-align: center;
+}
+  ::-webkit-scrollbar{
+    width:7px;
+  }
+  ::-webkit-scrollbar-track{
+    border-radius: 10px;
+    margin: 10px;
+  }
+  ::-webkit-scrollbar-thumb{
+    background: #D6D2D2;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover{
+    background: #3A5938;
+  }
+table{
+    width: 100%;
+    padding: 10px;
+}
+  td{
+    padding: 10px;
+  }
+  th{
+    padding: 15px;
+    text-align: left;
+  }
+#SFF{
+    font-weight: bolder;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #3A5938;
+}
+p{
+    font-size: 12px;
+    margin-bottom: 20px;
+    color: black;
+    font-weight: bolder;
+}
+.rating{
+    font-weight: bolder;
+    font: 14px;
+    color: #3A5938;
+  }
+button{
+    margin: 10px;
+    text-align: center;
+    padding: 7px;
+    width: 100px;
+    background-color: #EAAD00;
+    border: none;
+    color: #ffffff;
+    font-weight: bolder;
+    border-radius: 10px;
+  }
+  button:hover{
+    background-color: #ffbb00;
+    cursor: pointer;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+label{
+  font-size: 12px;
+}
+.filter{
+  font-size: 12px;
+  padding: 4px;
+  border: 1px solid gray;
+}
+.filter:hover{
+  cursor: pointer;
+  padding: 5px;
+}
+.filter:focus{
+  cursor: pointer;
+  outline: none;
+  border: 1.2px solid #000000;
+}
+#filter-button{
+  font-size: 12px;
+  padding: 4px;
+  border: 1px solid gray;
+}
+#filter-button:hover{
+  cursor: pointer;
+  background-color: #c5c5c5;
+}

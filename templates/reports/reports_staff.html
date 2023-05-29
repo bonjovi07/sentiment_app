@@ -1,0 +1,66 @@
+{% extends 'feedbackbase.html' %}
+{% load static %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{% static 'css/reports/reports_staff.css' %}">
+{% endblock%}
+
+{% block title %}
+Reports
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h1> EMPLOYEE REPORTS </h1>
+        <h4>OFFICE: <span>{{ office.first_name }}</span></h4> 
+    </div>
+    <div class="Search_bar">
+        <form action="{% url 'feedback:reports_staff_search' office.id %}" method="GET" id="search-form">
+            <label>From:</label>
+        <input type="date" name="date_from" id="date-from" placeholder="Date From" class="filter"/>
+        <label>To:</label>
+        <input type="date" name="date_to" id="date-to" placeholder="Date To" class="filter"/>
+        <input type="submit" id="filter-button" value="Filter Date"/>
+        </form>
+    </div>
+    <div class="main">
+        <div class="container">
+            <p id="SFF">STAKEHOLDERS' FEEDBACK FORM EMPLOYEE REPORT</p>
+            <p>Courtesy and Service of Staff</p>
+            <table>
+                <tr>
+                    <th>Name of Staff</th>
+                    <th>No. of Clients</th>
+                    <th>Overall Rating</th>
+                    <th>Employee Status</th>
+                    <th>Remarks</th>
+                    <th>Action/s Taken</th>
+                </tr>
+                {% for employee in employees %}
+                <tr>
+                    <td>{{ employee.first_name }} {{ employee.last_name }}</td>
+                    <td>{{ employee.client_count }}</td>
+                    <td class="rating">
+                        {% if employee.feedback_average %}
+                            {{ employee.feedback_average }}
+                        {% else %}
+                            0.00
+                        {% endif %}
+                    </td>
+                    {% if employee.is_active %}
+                        <td>Active</td>
+                    {% else %}
+                        <td>Inactive</td>
+                    {% endif %}
+                    <td></td>
+                    <td></td>
+                </tr>
+                {% endfor %}
+            </table>
+    
+            <div class='back'>
+                <a href="{% url 'feedback:reports_officesummary' office.id %}"><button type="button" class='back_button'>Back</button></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
